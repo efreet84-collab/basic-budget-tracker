@@ -27,18 +27,23 @@ import {
 } from 'lucide-react';
 
 
-// --- Firebase Configuration ---
-// This configuration is automatically replaced by the environment.
-const firebaseConfig = typeof __firebase_config !== 'undefined'
-  ? JSON.parse(__firebase_config)
-  : {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_STORAGE_BUCKET",
-      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDsq42-1Bfci5ekHA_4raDcfEWohmIZuC4",
+  authDomain: "basic-budget-6ca2f.firebaseapp.com",
+  projectId: "basic-budget-6ca2f",
+  storageBucket: "basic-budget-6ca2f.firebasestorage.app",
+  messagingSenderId: "824405162451",
+  appId: "1:824405162451:web:6a0c6bcaed894cdb1cd726"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 
 // --- Firebase Initialization ---
