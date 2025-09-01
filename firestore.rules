@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+match /databases/{database}/documents {
+// Helper function to check if the user is the owner of the data
+function isOwner(userId) {
+return request.auth != null && request.auth.uid == userId;
+}
+
+// Path for all application-specific data
+match /artifacts/{appId}/users/{userId}/{document=**} {
+  // Allow users to read and write their own data.
+  // This covers all subcollections like expenses, income, budgets, etc.
+  allow read, write: if isOwner(userId);
+}
+
+}
+}
